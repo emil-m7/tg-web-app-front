@@ -20,6 +20,43 @@
 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae consequuntur repellendus praesentium
 		consectetur atque facilis iste aliquam fugiat quas? Architecto fugiat blanditiis sint aut! Soluta quia porro
 		repellendus illo.</p>
+
+
+	<button id="sendData">Send message to bot</button>
+
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			const telegram = window.Telegram.WebApp;
+			telegram.expand(); // Разворачивает окно приложения на весь экран
+
+			// Пример отправки данных в бот
+			document.getElementById("sendData").onclick = () => {
+				telegram.sendData("Привет от веб-приложения!");
+			};
+
+			// Настройка тем
+			if (telegram.themeParams.bg_color) {
+				document.body.style.backgroundColor = telegram.themeParams.bg_color;
+			}
+		});
+	</script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Telegram Mini App</title>
+</head>
+
+<body>
+	<h1>Добро пожаловать в Mini App для Telegram!</h1>
+	<button id="sendData">Отправить сообщение боту</button>
 </body>
 
 </html>
